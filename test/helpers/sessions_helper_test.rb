@@ -16,4 +16,10 @@ class SessionsHelperTest < ActionView::TestCase
     @user.update_attribute(:remember_digest, User.digest(User.new_token))
     assert_nil current_user
   end
+
+    # Returns true if the given user is the current user.
+  def current_user?(user)
+    user == current_user
+  end
+
 end
